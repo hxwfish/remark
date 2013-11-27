@@ -1,81 +1,81 @@
-// ×Ô¶¯¹¹½¨-Mstar 6A801 drive
+ï»¿// è‡ªåŠ¨æ„å»º-Mstar 6A801 drive
 \\192.168.99.102\share_6a801\mstar_drive\
 
-Mstar6A801-BD svn releaseÂ·¾¶£º
+Mstar6A801-BD svn releaseè·¯å¾„ï¼š
 \\192.168.99.102\share_6a801\Mstar6A801-BD\2013102118_svn_1262
 
-µÚÈı·½¹¤³Ì£º
+ç¬¬ä¸‰æ–¹å·¥ç¨‹ï¼š
 svn://192.168.99.107/MW_thirdparty/trunk/integration/product
 
 
-netcfg    ²é¿´androidÍøÂç
+netcfg    æŸ¥çœ‹androidç½‘ç»œ
 
-androidÌí¼ÓÍø¹Ø
+androidæ·»åŠ ç½‘å…³
 busybox route add default gw 172.30.84.254   
 
-É¾³ıÍø¹Ø
+åˆ é™¤ç½‘å…³
 busybox route del -net 172.30.0.0 netmask 255.255.0.0 dev eth0  
 
-bootĞŞ¸ÄmacµØÖ·£º
+bootä¿®æ”¹macåœ°å€ï¼š
 setenv ethaddr 00:1a:9a:03:76:d6;
 
-boot²é¿´env£º
+bootæŸ¥çœ‹envï¼š
 printenv
 
 
-adb²Ù×÷
+adbæ“ä½œ
 adb kill-server
 adb connect ip:5555
 adb root
 adb remount
 adb push/pull source destion
 
-==============¹¤¾ßÁ´
+==============å·¥å…·é“¾
 coshipup_manu --tools
 
 
-mount nfsÊ¾Àı
+mount nfsç¤ºä¾‹
 mount -t nfs -o intr,nolock,rsize=1024,wsize=1024 172.30.84.96:/home/907806/delivery_mmcp_v1.5_guangdong_20121211/integration/product/guangdong_jiulian_hisi3716M_v300 
 /mnt/nfs 
 
 
-http://192.168.99.101:9999/BestWin/01.mmcp.cbb/¿ª·¢¿â/00.ÈÕ³£¹ÜÀí/01.¼¯³É¿ª·¢²¿/ĞÂÔ±¹¤ÅàÑø/Çı¶¯¿ª·¢²¿ĞÂÔ±¹¤ÅàÑµÏµÁĞ_2013ÖÁ2014/»ÆÏşìÉ
+http://192.168.99.101:9999/BestWin/01.mmcp.cbb/å¼€å‘åº“/00.æ—¥å¸¸ç®¡ç†/01.é›†æˆå¼€å‘éƒ¨/æ–°å‘˜å·¥åŸ¹å…»/é©±åŠ¨å¼€å‘éƒ¨æ–°å‘˜å·¥åŸ¹è®­ç³»åˆ—_2013è‡³2014/é»„æ™“ç„
 
 
-ºĞ×ÓÆô¶¯adb£º  adbd&
+ç›’å­å¯åŠ¨adbï¼š  adbd&
 
 
-¹«ÍøÆµµãĞÅÏ¢£º
+å…¬ç½‘é¢‘ç‚¹ä¿¡æ¯ï¼š
 http://10.10.96.1/
-490£ºCCTV 6¸ö
-698£ºHNWS,JYWS
+490ï¼šCCTV 6ä¸ª
+698ï¼šHNWS,JYWS
 
 
-linux³õÊ¼»¯»á¶ÁÈ¡µÄÎÄ¼ş£º
+linuxåˆå§‹åŒ–ä¼šè¯»å–çš„æ–‡ä»¶ï¼š
 /etc/profile
-/etc/bashrc  bashÅäÖÃ
+/etc/bashrc  bashé…ç½®
 
-netcfg    androidÍøÂç
-busybox route add default gw 172.30.84.254   Ìí¼ÓÍø¹Ø
+netcfg    androidç½‘ç»œ
+busybox route add default gw 172.30.84.254   æ·»åŠ ç½‘å…³
 
 
-¹Ø±Õ·À»ğÇ½
+å…³é—­é˜²ç«å¢™
 chkconfig iptables off
 
-²»ÓÃadb remout root
+ä¸ç”¨adb remout root
 mount -t ubifs -o rw,remount ubi0_0 /system
 
 =======================================================================================================================
 windows
 
-==> É¾³ıÍøÂçÓÃ»§ºÍÃÜÂë
-cmdÖĞÊäÈë net use * /del É¾³ıËùÓĞÔ¶³ÌÁ¬½Ó
+==> åˆ é™¤ç½‘ç»œç”¨æˆ·å’Œå¯†ç 
+cmdä¸­è¾“å…¥ net use * /del åˆ é™¤æ‰€æœ‰è¿œç¨‹è¿æ¥
 
-==> µ¼³öµ¼ÈëÍøÂç½Ó¿ÚÅäÖÃÎÄ¼ş
-netsh -c interface dump>c:\ip.txt       //°Ñ±¾»úÍøÂçÅäÖÃµ¼³öµ½CÅÌÏÂµÄ ip.txt ÎÄ¼şÖĞ
+==> å¯¼å‡ºå¯¼å…¥ç½‘ç»œæ¥å£é…ç½®æ–‡ä»¶
+netsh -c interface dump>c:\ip.txt       //æŠŠæœ¬æœºç½‘ç»œé…ç½®å¯¼å‡ºåˆ°Cç›˜ä¸‹çš„ ip.txt æ–‡ä»¶ä¸­
 netsh -f c:\ip.txt
 
-==> ÏŞÖÆÍøÂçĞŞ¸Ä
+==> é™åˆ¶ç½‘ç»œä¿®æ”¹
 Regsvr32 /u Netcfgx.dll
 Regsvr32 /u Netshell.dll
 Regsvr32 /u Netman.dll
@@ -83,19 +83,19 @@ Regsvr32 /u Netman.dll
 =======================================================================================================================
 linux
 
-==> ÉèÖÃÏµÍ³Ê±¼ä
+==> è®¾ç½®ç³»ç»Ÿæ—¶é—´
 date -s 13:11
 date -s '2008/9/11 13:11'
 
 --------------------------------------------
-ÒªÌí¼ÓĞÂÓÃ»§µ½sudo£¬
+è¦æ·»åŠ æ–°ç”¨æˆ·åˆ°sudoï¼Œ
 $sudo usermod -G admin username 
-Èç¹ûÓÃ»§ÒÑ¾­ÊÇÆäËû×éµÄ³ÉÔ±£¬ÄãĞèÒªÌí¼Ó -a Õâ¸öÑ¡Ïî
+å¦‚æœç”¨æˆ·å·²ç»æ˜¯å…¶ä»–ç»„çš„æˆå‘˜ï¼Œä½ éœ€è¦æ·»åŠ  -a è¿™ä¸ªé€‰é¡¹
 $sudo usermod -a -G admin username
 --------------------------------------------
 
 --------------------------------------------
-Ô¶³Ì¸´ÖÆ
+è¿œç¨‹å¤åˆ¶
 scp root@/172.19.2.75:/home/root/full.tar.gz /home/daisy/full.tar.gz
 scp /home/daisy/full.tar.gz root@172.19.2.75:/home/root
 --------------------------------------------
