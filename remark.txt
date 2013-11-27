@@ -1,0 +1,101 @@
+// 自动构建-Mstar 6A801 drive
+\\192.168.99.102\share_6a801\mstar_drive\
+
+Mstar6A801-BD svn release路径：
+\\192.168.99.102\share_6a801\Mstar6A801-BD\2013102118_svn_1262
+
+第三方工程：
+svn://192.168.99.107/MW_thirdparty/trunk/integration/product
+
+
+netcfg    查看android网络
+
+android添加网关
+busybox route add default gw 172.30.84.254   
+
+删除网关
+busybox route del -net 172.30.0.0 netmask 255.255.0.0 dev eth0  
+
+boot修改mac地址：
+setenv ethaddr 00:1a:9a:03:76:d6;
+
+boot查看env：
+printenv
+
+
+adb操作
+adb kill-server
+adb connect ip:5555
+adb root
+adb remount
+adb push/pull source destion
+
+==============工具链
+coshipup_manu --tools
+
+
+mount nfs示例
+mount -t nfs -o intr,nolock,rsize=1024,wsize=1024 172.30.84.96:/home/907806/delivery_mmcp_v1.5_guangdong_20121211/integration/product/guangdong_jiulian_hisi3716M_v300 
+/mnt/nfs 
+
+
+http://192.168.99.101:9999/BestWin/01.mmcp.cbb/开发库/00.日常管理/01.集成开发部/新员工培养/驱动开发部新员工培训系列_2013至2014/黄晓焐
+
+
+盒子启动adb：  adbd&
+
+
+公网频点信息：
+http://10.10.96.1/
+490：CCTV 6个
+698：HNWS,JYWS
+
+
+linux初始化会读取的文件：
+/etc/profile
+/etc/bashrc  bash配置
+
+netcfg    android网络
+busybox route add default gw 172.30.84.254   添加网关
+
+
+关闭防火墙
+chkconfig iptables off
+
+不用adb remout root
+mount -t ubifs -o rw,remount ubi0_0 /system
+
+=======================================================================================================================
+windows
+
+==> 删除网络用户和密码
+cmd中输入 net use * /del 删除所有远程连接
+
+==> 导出导入网络接口配置文件
+netsh -c interface dump>c:\ip.txt       //把本机网络配置导出到C盘下的 ip.txt 文件中
+netsh -f c:\ip.txt
+
+==> 限制网络修改
+Regsvr32 /u Netcfgx.dll
+Regsvr32 /u Netshell.dll
+Regsvr32 /u Netman.dll
+
+=======================================================================================================================
+linux
+
+==> 设置系统时间
+date -s 13:11
+date -s '2008/9/11 13:11'
+
+--------------------------------------------
+要添加新用户到sudo，
+$sudo usermod -G admin username 
+如果用户已经是其他组的成员，你需要添加 -a 这个选项
+$sudo usermod -a -G admin username
+--------------------------------------------
+
+--------------------------------------------
+远程复制
+scp root@/172.19.2.75:/home/root/full.tar.gz /home/daisy/full.tar.gz
+scp /home/daisy/full.tar.gz root@172.19.2.75:/home/root
+--------------------------------------------
