@@ -8,7 +8,8 @@ Mstar6A801-BD svn release路径：
 svn://192.168.99.107/MW_thirdparty/trunk/integration/product
 
 
-netcfg    查看android网络
+android查看网络
+netcfg    
 
 android添加网关
 busybox route add default gw 172.30.84.254   
@@ -30,19 +31,13 @@ adb root
 adb remount
 adb push/pull source destion
 
-==============工具链
+==============下载工具链
 coshipup_manu --tools
 
 
 mount nfs示例
 mount -t nfs -o intr,nolock,rsize=1024,wsize=1024 172.30.84.96:/home/907806/delivery_mmcp_v1.5_guangdong_20121211/integration/product/guangdong_jiulian_hisi3716M_v300 
 /mnt/nfs 
-
-
-http://192.168.99.101:9999/BestWin/01.mmcp.cbb/开发库/00.日常管理/01.集成开发部/新员工培养/驱动开发部新员工培训系列_2013至2014/黄晓焐
-
-
-盒子启动adb：  adbd&
 
 
 公网频点信息：
@@ -54,13 +49,6 @@ http://10.10.96.1/
 linux初始化会读取的文件：
 /etc/profile
 /etc/bashrc  bash配置
-
-netcfg    android网络
-busybox route add default gw 172.30.84.254   添加网关
-
-
-关闭防火墙
-chkconfig iptables off
 
 不用adb remout root
 mount -t ubifs -o rw,remount ubi0_0 /system
@@ -86,6 +74,9 @@ linux
 ==> 设置系统时间
 date -s 13:11
 date -s '2008/9/11 13:11'
+
+==> 关闭防火墙 (FC6)
+chkconfig iptables off
 
 --------------------------------------------
 要添加新用户到sudo，
