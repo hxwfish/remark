@@ -112,10 +112,20 @@ $sudo usermod -a -G admin username
 scp root@/172.19.2.75:/home/root/full.tar.gz /home/daisy/full.tar.gz
 scp /home/daisy/full.tar.gz root@172.19.2.75:/home/root
 --------------------------------------------
+==============================================================================================================
 
+android
 
+---------------------------------------------------------------------------------
+==> eclipse中运行avd报Failed to allocate memory: 8
 
-
+This following solution worked for me. In the following configuration file:
+C:\Users\<user>\.android\avd\<avd-profile-name>.avd\config.ini
+Replace
+hw.ramSize=1024
+by
+hw.ramSize=1024MB
+----------------------------------------------------------------------------------
 
 
 
